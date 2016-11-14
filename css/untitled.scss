@@ -1,0 +1,133 @@
+$black : #111;
+$gray : #333;
+$white : #FFF;
+$second : #E74C3C;
+
+$mq-breakpoints: (
+    mobile:  320px,
+    tablet:  740px,
+    desktop: 980px,
+    wide:    1300px
+) !default;
+
+body,html {
+  padding: 0;
+  margin: 0;
+  font-family: 'Abhaya Libre', serif;
+  color: #111;
+}
+h1,h2,h3,h4,h5 {
+  font-family: 'Abril Fatface', cursive;
+}
+.big-font {
+  font-size: 500%;
+}
+.sep-row {
+  border-top: solid;
+  border-top-color: $gray;
+  border-top-width: medium;
+
+  border-bottom: solid;
+  border-bottom-color: $gray;
+  border-bottom-width: medium;
+
+  margin : 1em 0;
+  padding-top: 1em
+}
+.full-section, section {
+  background-color: $white;
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  padding: 5em;
+}
+.untitled-intro {
+  @extend .full-section;
+  background-color: $gray;
+  overflow: hidden;
+  height: 100vh;
+  .inner {
+    transform: rotate(-5deg) translate(10vh,0);
+    animation-name: moving-papers;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    width: 100%;
+    padding: 5em;
+    background-color: $white;
+  }
+}
+
+.big-statement{
+  @extend .full-section;
+  background-color: $second;
+  color: $white;
+}
+
+img {
+  max-width: 100%;
+  margin: 1em 0em;
+}
+
+.text-well {
+  background-color: $gray;
+  color : $white;
+  padding: 2em;
+  margin: 1em 0em;
+}
+
+blockquote {
+  border-left: solid;
+  border-left-color: $gray;
+  border-left-width: medium;
+  padding : 1em 2em;
+}
+
+@keyframes moving-papers {
+    from {
+      transform: rotate(-10deg) translate(10vh,0) scale(1.2);
+    }
+    to {
+      transform: rotate(-5deg) translate(10vh,0);
+    }
+}
+
+header {
+  background-color: $gray;
+  color: $white;
+  position:fixed;
+  top: 0;
+  left: 0;
+  margin: 0,0;
+  width: 100vw;
+  padding: 0.5em 0.7em;
+  z-index: 9999;
+}
+
+nav {
+  a {
+    font-family: 'Abhaya Libre', serif;
+    text-transform: uppercase;
+    color: inherit;;
+    font-size: 1em;
+    margin-right: 0.5em;
+    border-right: solid;
+    border-right-color: $white;
+    padding-right: 0.6em;
+  }
+
+  a:last-child{
+    border-right: none;
+  }
+
+  a:hover {
+    opacity : 0.8;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .brand {
+    padding-right: 0.6em;
+    display: inline-block;
+    color: $second;
+  }
+}
